@@ -3,12 +3,10 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import MessageIcon from '@mui/icons-material/Message';
 import ReactFlow, {
   addEdge,
-  MiniMap,
-  Controls,
+
   Background,
   useNodesState,
   useEdgesState,
-  ReactFlowProvider,
   useReactFlow,
   MarkerType,
 } from 'reactflow';
@@ -16,7 +14,6 @@ import 'reactflow/dist/style.css';
 import './FlowBuilder.css';
 
 const FlowBuilder = ({
-  selectedNode,
   setSelectedNode,
   nodes,
   setNodes,
@@ -42,6 +39,7 @@ const FlowBuilder = ({
   // Function to update external edges state
   setEdges(reactEdges);
 
+  console.log(rfInstance)
   // Callback function for handling node connections
   const onConnect = useCallback(
     (params) => {
